@@ -50,9 +50,6 @@ async function fetchNews(category) {
             main.appendChild(newDiv)
         }
 
-        // title.innerHTML = data.articles[0].title;
-
-        console.log(data);
     } catch (error) {
         console.error('Error fetching the news:', error);
     }
