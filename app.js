@@ -3,10 +3,13 @@ const img = document.querySelector(".img-src");
 const title = document.querySelector(".title");
 const description = document.querySelector(".description");
 const main = document.querySelector(".main");
+const entertainments = document.querySelector(".entertainments");
+const sports = document.querySelector(".sports");
+const politics = document.querySelector(".politics");
 
-async function fetchNews() {
+async function fetchNews(category) {
     const API_KEY = "659f0b4b809b49279bead0c1015c98d7";
-    const url = "https://newsapi.org/v2/top-headlines?country=in&category=business&apiKey=659f0b4b809b49279bead0c1015c98d7";
+    const url =`https://newsapi.org/v2/top-headlines?country=in&category=${category}&apiKey=659f0b4b809b49279bead0c1015c98d7`;
 
     try {
         const response = await fetch(url);
@@ -54,5 +57,21 @@ async function fetchNews() {
         console.error('Error fetching the news:', error);
     }
 }
-fetchNews();
+fetchNews("politics");
+
+entertainments.addEventListener("click", ()=>{
+    main.innerHTML = "";
+    fetchNews("entertainment");
+});
+sports.addEventListener("click", ()=>{
+    main.innerHTML = "";
+    fetchNews("sport");
+});
+politics.addEventListener("click", ()=>{
+    main.innerHTML = "";
+    fetchNews("politics");
+});
+
+
+
 
