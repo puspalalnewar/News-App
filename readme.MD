@@ -1,1 +1,1 @@
-# This is a news web application.
+# This is a news-app  web application using HTML, CSS and JavaScript.
