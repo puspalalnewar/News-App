@@ -19,7 +19,6 @@ async function fetchNews(category) {
         const data = await response.json();
 
         for (let i = 0; i < data.articles.length; i++) {
-            // let errorImg = notFound.webp;
             let work = data.articles[i];
             let title = work.title;
             let desc = work.description;
